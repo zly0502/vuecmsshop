@@ -7,6 +7,8 @@ import member from './components/tabber/member.vue';
 import shopcar from './components/tabber/shopcar.vue';
 import search from './components/tabber/search.vue';
 import newslist from './components/news/newslist.vue';
+import newsdetail from './components/news/newsdetail.vue';
+
 
 //定义路由匹配
 var router = new VueRouter({
@@ -17,6 +19,8 @@ var router = new VueRouter({
     {path:'/shopcar',component:shopcar},
     {path:'/search',component:search},
     {path:'/home/newslist',component:newslist},
+    {path:'/home/newsdetail/:id',component:newsdetail},
+
   ],
   //修改路由匹配到的默认类,修改为mui的类
   'linkActiveClass':'mui-active'

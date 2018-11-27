@@ -14,32 +14,14 @@ import VueRouter from 'vue-router';
 //安装到vue身上
 Vue.use(VueRouter);
 
-// //引入路由对应的组件
-// import home from './components/tabber/home.vue';
-// import member from './components/tabber/member.vue';
-// import shopcar from './components/tabber/shopcar.vue';
-// import search from './components/tabber/search.vue';
-// import newslist from './components/news/newslist.vue';
-
-// //定义路由匹配
-// var router = new VueRouter({
-//   routes:[
-//     {path:'/',redirect:'/home'},//重定向
-//     {path:'/home',component:home},
-//     {path:'/member',component:member},
-//     {path:'/shopcar',component:shopcar},
-//     {path:'/search',component:search},
-//     {path:'/home/newslist',component:newslist},
-//   ],
-//   //修改路由匹配到的默认类,修改为mui的类
-//   'linkActiveClass':'mui-active'
-// });
 
 //引入路由模块
 import router from './router';
 
 //导入根组件
 import app from './app.vue';
+
+
 
 //引入mintui组件(css一般可以按需引入，而js一般是全局引入)
 import { Header } from 'mint-ui';
@@ -56,6 +38,12 @@ import './lib/mui/css/mui.min.css';
 //引入mui扩展的字体图标
 import './lib/mui/css/icons-extra.css';
 
+//引入moment模块
+import moment from 'moment';
+//定义全局的时间过滤器
+Vue.filter('dateFormat',function(dateStr,pattern="YYYY-MM-DD HH:mm:ss"){
+  return moment(dateStr).format(pattern);
+});
 
 //创建vue实例
 new Vue({

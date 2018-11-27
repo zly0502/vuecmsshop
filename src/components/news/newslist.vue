@@ -4,16 +4,16 @@
     <!-- 新闻列表区 -->
     <ul class="mui-table-view">
       <li class="mui-table-view-cell mui-media" v-for="item in newslist" :key="item.id">
-        <a href="javascript:;">
+        <router-link :to="'/home/newsdetail/'+item.id">
           <img class="mui-media-object mui-pull-left" :src="item.img_url">
           <div class="mui-media-body">
             <h2>{{ item.title }}</h2>
             <p class='mui-ellipsis'>
-              <span>发布时间：{{ item.add_time }}</span>
+              <span>发布时间：{{ item.add_time | dateFormat}}</span>
               <span class="click">点击：{{ item.click }}次</span>
             </p>
           </div>
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -46,16 +46,20 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   /*写当前组件的样式*/
-  .newslist-container .mui-table-view h2{
-    font-size: 13px;
-  }
-  .newslist-container .mui-table-view .mui-ellipsis{
-    color:cornflowerblue;
-    font-size:12px;
-  }
-  .newslist-container .mui-table-view .click{
-    float: right;
+  .newslist-container {
+    .mui-table-view{
+      h2{
+        font-size: 13px;
+      }
+      .mui-ellipsis{
+        color:cornflowerblue;
+        font-size:12px;
+      }
+      .click{
+        float: right;
+      }
+    }
   }
 </style>

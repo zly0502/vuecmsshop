@@ -58,10 +58,10 @@ module.exports = {
           use:['vue-loader']
         },
         //匹配scss规则
-        // {
-        //   test:/\.scss$/,
-        //   use:['style-loader', 'css-loader', 'sass-loader']
-        // }
+        {
+          test:/\.less$/,
+          use:['style-loader', 'css-loader', 'less-loader']
+        }
      ]
   },
   //重定义

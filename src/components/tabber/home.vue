@@ -74,27 +74,30 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   /*写当前组件的样式*/
-  .home-container .mint-swipe{
+  .home-container{
+    //轮播图样式
+    .mint-swipe{
       height:200px;
-  }
-  .home-container .mint-swipe-item img{
-    width: 100%;
-  }
+    }
+    .mint-swipe-item img{
+      width: 100%;
+    }
 
-  /* 九宫格样式 */
-  .home-container .mui-grid-9{
-    background-color: #fff;
-  }
-  .home-container .mui-grid-9 .mui-table-view-cell {
-    border:none;
-  }
-  .home-container .mui-grid-9 .mui-table-view-cell .mui-media-body{
-    font-size: 13px;
-  }
-  .home-container .mui-grid-9 .mui-table-view-cell img{
-    width: 50%;
+    //九宫格样式
+    .mui-grid-9{
+      background-color: #fff;
+      .mui-table-view-cell {
+        border:none;
+        .mui-media-body{
+          font-size: 13px;
+        }
+        img{
+          width: 50%;
+        }
+      }
+    }
   }
   
 </style>
